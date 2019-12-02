@@ -1,8 +1,16 @@
-with open('input.txt') as f:
-    masses = [int(line.strip()) for line in f]
+with open('input.txt') as data:
+    mass = [int(line.strip()) for line in data]
 
 
-print(masses)
+def math(mass):
+    total_mass = 0
+    for x in mass:
+        calculated = (x // 3) - 2  # 5/3
+        total_mass += calculated
+    return total_mass
+
+
+print(math(mass))
 
 # mass = input("What is the mass?: ")
 # print("calculating for a mass of:", mass)
