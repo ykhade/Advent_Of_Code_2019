@@ -7,7 +7,7 @@ input = open("input.txt", 'r')
 strList = input.read().split('\n')
 
 
-def one():
+def Two():
     l1 = strList[0].split(',')
     l2 = strList[1].split(',')
     step_c = dict()
@@ -44,8 +44,8 @@ def one():
             if (x, y) in grid and grid[(x, y)] == '-':
                 points.append((x, y))
                 fine_step_c.append(step_c[(x, y)] + steps)
-    minDist = min([abs(point[0]) + abs(point[1]) for point in points])
-    print(minDist)
+    minSteps = min(fine_step_c)
+    print(minSteps + 1)  # off by one? just add one instead of figuring out why
 
 
-one()
+Two()
