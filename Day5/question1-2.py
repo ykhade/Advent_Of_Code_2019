@@ -6,7 +6,7 @@ def add(a, b):
     return a + b
 
 
-def mul(a, b):
+def times(a, b):
     return a * b
 
 
@@ -67,7 +67,7 @@ def IntCode(sequence):
             a = sequence[pc + 1]
             b = sequence[pc + 2]
             res = sequence[pc + 3]
-            sequence[res] = mul(sequence[a], sequence[b])
+            sequence[res] = times(sequence[a], sequence[b])
 
         # input
         elif op_code == 3:
