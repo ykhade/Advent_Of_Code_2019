@@ -39,8 +39,10 @@ def treatInput(pc, sequence):
 
 
     elif len(op) == 3:
+        return 0
 
     elif len(op) == 4:
+        return 0
 
     elif len(op) == 5:
         if op[0] == 0:
