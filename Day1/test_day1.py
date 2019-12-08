@@ -13,3 +13,4 @@ def test_math():
 
 def test_total_fuel_func():
     assert question.total_fuel_func([33583, 11192, 3728, 1240, 411, 135], math) == 25029
+    assert question.total_fuel_func([33583, 11192, 3728, 1240, 411, 234], math) == 25029
