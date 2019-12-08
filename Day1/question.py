@@ -1,5 +1,5 @@
 # Day 1: The Tyranny of the Rocket Equation
-with open('input.txt') as f:
+with open('Day1/input1.txt') as f:
     arr = [int(line.strip()) for line in f]
 
 def math(x):
