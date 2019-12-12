@@ -1,3 +1,6 @@
+import pytest
+
+
 def comp(filename,input_value,memory):
     p = [int(x) for x in open(filename).read().split(',')]
     p += [0] * (memory - len(p))
@@ -27,4 +30,8 @@ def comp(filename,input_value,memory):
         elif opcode == 9:
             relative += position[0]
         index += o[opcode] + 1
-comp("Day9/input.txt", 1, 10000)
+
+
+def test_comp():
+    asnwer = comp("Day9/input.txt", 1, 10000)
+    assert 1 == 1
