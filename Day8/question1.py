@@ -1,7 +1,7 @@
 H = 6
 W = 25
 IMAGE_SIZE = H * W
-inp = open("input.txt").read()
+inp = open("Day8/input.txt").read()
 layers = []
 while inp:
     layers.append(inp[:IMAGE_SIZE])
