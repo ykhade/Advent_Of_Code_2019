@@ -169,5 +169,4 @@ def solve():
     return len(painted)
 
 
-result = solve()
-print(f"Solution: {result}")
+print(solve())
