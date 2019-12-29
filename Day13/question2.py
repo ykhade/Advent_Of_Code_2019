@@ -1,5 +1,4 @@
 from collections import defaultdict
-
 def read_file(name):
     with open(f"input.txt") as f:
         content = f.readlines()
@@ -124,21 +123,36 @@ def create_program(input):
     return prog
 
 
+def get_joy(ball, paddle):
+    if ball > paddle:
+        return 1
+    elif ball == paddle:
+        return 0
+    else:
+        return -1
+
+
 def solve():
     input = read_file("13")[0].split(",")
     prog = create_program(input)
+    prog[0] = 2
+
     game = Game(prog)
-    result = 0
+    ball, paddle = 0, 0
+    coord = defaultdict(int)
 
     while not game.halt:
-        for i in range(3):
-            run_game(game)
-        if game.output == 2:
-            result += 1
+        for output in ["x", "y", "tile"]:
+            run_game(game, get_joy(ball, paddle))
+            coord[output] = game.output
+        if coord["tile"] == 3:
+            paddle = coord["x"]
+        elif coord["tile"] == 4:
+            ball = coord["x"]
+        if coord["x"] == -1:
+            score = coord["tile"]
 
-    return result
+    return score
 
 
-print(
-    solve()
-)
+print(solve())
