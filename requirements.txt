@@ -5,7 +5,7 @@ bonjour-py==0.3
 certifi==2019.3.9
 cffi==1.12.2
 chardet==3.0.4
-cryptography==3.3.2
+cryptography==39.0.1
 Deprecated==1.2.5
 enum34==1.1.6
 future==0.17.1
